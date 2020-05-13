@@ -1,0 +1,30 @@
+<h3 style="color:orange;"> Want a link back to case in which this dart set can be located and somewhere on the page say which dart case this set is in. </h3>
+<h2> This is your show page for dart sets </h2>
+
+  <h2><%= @dart_set.name %> Dart Set<h2>
+  <br />
+
+  <h2>Darts</h2>
+  <% @dart_set %>
+    Dart Name: <%= @dart_set.name %></a>
+    <br />
+    Dart Manufacturer: <%= @dart_set.manufacturer %>
+    <br />
+    Dart Condition: <%= @dart_set.condition %>
+    <br />
+    Dart Flight: <%= @dart_set.flight %>
+    <br />
+    Dart Body: <%= @dart_set.body %>
+    <br />
+    Dart Shaft: <%= @dart_set.shaft %>
+    <br />
+    <form action="/dart_sets/<%= @dart_set.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE" />
+      <input type="submit" value="Delete Dart Set">
+    </form>
+  <br />
+  <br />
+  <a href="/dart_sets/<%= @dart_set.id %>/edit">Edit</a>
+  <a href="/dart_cases/<%= @dart_set.dart_case_id %>">Back to your case</a>
+  <br />
+  <br />

@@ -1,0 +1,39 @@
+<h3 style="color:orange;"> Want to add a delete dart set button here that redirects to the case in which the dart set was deleted </h3>
+<h2> This is your edit page for dart sets </h2>
+
+<h1>Edit Your Dart Set <%= @dart_set.name %></h1>
+
+<form action="/dart_sets/<%= @dart_set.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT" />
+  <% @dart_set.errors.full_messages.each do |msg| %>
+    <h3><%= msg %></h3>
+  <% end %>
+  <label> Dart Set Name </label>
+  <input type="text" name="name" value="<%= @dart_set.name %>">
+  <br />
+  <br />
+  <label> Dart Set Manufacturer: </label>
+  <input type="text" name="manufacturer" value="<%= @dart_set.manufacturer %>"> <br />
+  <br />
+  <label> Dart Set Condition: </label>
+  <input type="text" name="condition" value="<%= @dart_set.condition %>"> <br />
+  <br />
+  <label> Dart Set Flight: </label>
+  <input type="text" name="flight" value="<%= @dart_set.flight %>"> <br />
+  <br />
+  <label> Dart Set Body: </label>
+  <input type="text" name="body" value="<%= @dart_set.body %>"> <br />
+  <br />
+  <label> Dart Set Shaft: </label>
+  <input type="text" name="shaft" value="<%= @dart_set.shaft %>"> <br /> 
+   <br /><br />
+  <label> Case in which you find this set </label>
+  <select name="dart_case_id">
+    <% current_user.dart_cases.each do |dart_case| %>
+      <option value="<%= dart_case.id %>"<% if dart_case.id == @dart_set.dart_case_id %> selected="selected"<% end %>><%= dart_case.name %></option>
+    <% end %>
+  </select>
+  <br /><br />
+
+  <input type="submit" value="Update">
+</form>

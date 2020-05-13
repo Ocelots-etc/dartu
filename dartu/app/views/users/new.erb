@@ -1,0 +1,12 @@
+<h3 style="color:orange;"> Put an error if username already exists and redirect to signup with a link for login or automatically log user is because well... Put an error if session[:user_id] exists. Also, I want to make this evenly spaced from the left</h3>
+<h2> This is your sign up page </h2>
+
+<h3>Sign Up</h3>
+<% @user.errors.full_messages.each do |msg| %>
+  <h3><%= msg %></h3>
+<% end %>
+<form action="/signup" method="POST">
+  <p>Name: <input type="text" name="username"></p>
+  <p>Password: <input type="password" name="password"></p>
+  <input type="submit" value="Sign Up">
+</form>

@@ -1,0 +1,15 @@
+<h2> This is your edit page for cases </h2>
+
+<h1>Edit Your Dart Case <%= @dart_case.name %></h1>
+
+<form action="/dart_cases/<%= @dart_case.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT" />
+  <% @dart_case.errors.full_messages.each do |msg| %>
+    <h3><%= msg %></h3>
+  <% end %>
+  <label> Case Name </label>
+  <input type="text" name="name" value="<%= @dart_case.name %>"> <br />
+
+  <input type="submit" value="Update">
+</form>
+  <a href="/dart_cases">Back to all your cases</a>

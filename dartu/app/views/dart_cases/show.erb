@@ -1,0 +1,24 @@
+<h2> This is your show page for cases </h2>
+
+  <h2><%= @dart_case.name %> Case</h2> <br />
+
+
+  <h2>Dart Sets</h2>
+  <% @dart_case.dart_sets.each do |dart_set| %>
+    <a href="/dart_sets/<%=dart_set.id%>"><%= dart_set.name %></a>
+    <a href="/dart_sets/<%=dart_set.id%>/edit">Edit <%= dart_set.name %></a>
+    <form action="/dart_sets/<%= dart_set.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE" />
+      <input type="submit" value="delete">
+    </form>
+  <br />
+  <br />
+  <% end%>
+  <a href="/dart_cases/<%=@dart_case.id%>/edit">Edit This Dart Case Name</a>
+  <br />
+  <a href="/dart_cases/<%=@dart_case.id%>/dart_sets/new">Add A New Dart Set</a>
+  <br />
+  <a href="/dart_cases"> Your Dart Cases</a>
+  
+  <br />
+  <br />

@@ -1,0 +1,15 @@
+<h2> This is your index page for cases </h2>
+<h2> These are all of your dart cases: </h2>
+<% @dart_cases.each do |dart_case| %>
+<h3>Case Name: <%= dart_case.name %></h3>
+<br />
+  <a style="font-size:11px;" href="/dart_cases/<%= dart_case.id %>"> View <%= dart_case.name %> Contents</a><br />
+  <a style="font-size:11px;" href="/dart_cases/<%= dart_case.id %>/edit">Edit This Dart Case Name</a>
+  <form action="/dart_cases/<%= dart_case.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="Delete Case">
+  </form>
+  <br />
+  <br />
+<% end %>
+<a href="/dart_cases/new">New Dart Case</a>
