@@ -45,5 +45,5 @@ class DartCasesController < ApplicationController
     @dart_case = current_user.dart_cases.find(params[:id])
     @dart_case.delete
     redirect "/dart_cases"
-  endji
+  end
 end
