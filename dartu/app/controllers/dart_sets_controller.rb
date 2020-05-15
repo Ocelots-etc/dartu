@@ -3,6 +3,7 @@ class DartSetsController < ApplicationController
     redirect_if_not_logged_in
   end
 
+  get "/dart_cases/:dart_case_id/dart_sets/new" do
     @dart_case = current_user.dart_cases.find(params[:dart_case_id])
     @dart_set = @dart_case.dart_sets.new
     erb :'dart_sets/new'

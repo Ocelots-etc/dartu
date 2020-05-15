@@ -6,7 +6,8 @@
     Dart Sets
     <img  src="../images/dartset.jpg" height="35">
   </h3>
-  <% @dart_case.dart_sets.each do |dart_set| %>
+  <% @dart_case.dart_sets.each_with_index do |dart_set, index| %>
+  <%= index + 1 %>.
   <h4><%= dart_set.name %></h4>
   <br />
   <table>
