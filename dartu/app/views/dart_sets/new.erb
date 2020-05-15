@@ -1,23 +1,24 @@
-<h2> This is your new page for dart sets </h2>
-
 <h2>Create a New Dart Set</h2>
 
 <form action="/dart_cases/<%= @dart_case.id %>/dart_sets" method="POST">
   <% @dart_set.errors.full_messages.each do |msg| %>
-    <h3><%= msg %></h3>
+    <p style="color:red;"><%= msg %></p>
   <% end %>
     <label> Dart Set Name: </label>
-  <input type="text" name="name" value="<%= @dart_set.name %>"> <br />
+  <input style="position:absolute;left:450px;" type="text" name="name" value="<%= @dart_set.name %>"> <br />
     <label> Dart Set Manufacturer: </label>
-  <input type="text" name="manufacturer" value="<%= @dart_set.manufacturer %>"> <br />
+  <input style="position:absolute;left:450px;" type="text" name="manufacturer" value="<%= @dart_set.manufacturer %>"> <br />
     <label> Dart Set Condition: </label>
-  <input type="text" name="condition" value="<%= @dart_set.condition %>"> <br />
-  <label> Dart Set Flight: </label>
-  <input type="text" name="flight" value="<%= @dart_set.flight %>"> <br />
+  <input style="position:absolute;left:450px;" type="text" name="condition" value="<%= @dart_set.condition %>"> <br />
     <label> Dart Set Body: </label>
-  <input type="text" name="body" value="<%= @dart_set.body %>"> <br />
+  <input style="position:absolute;left:450px;" type="text" name="body" value="<%= @dart_set.body %>"> <br />
     <label> Dart Set Shaft: </label>
-  <input type="text" name="shaft" value="<%= @dart_set.shaft %>"> <br />
+  <input style="position:absolute;left:450px;" type="text" name="shaft" value="<%= @dart_set.shaft %>"> <br />
+  <label> Dart Set Flight: </label>
+  <input style="position:absolute;left:450px;" type="text" name="flight" value="<%= @dart_set.flight %>"> <br />
 
-  <input type="submit" value="Create">
+  <input style="width:75px" type="submit" value="Create">
+</form>
+<form action="/dart_cases/<%= @dart_case.id %>" method="GET">
+  <input style="width:75px" type="submit" value="Cancel">
 </form>

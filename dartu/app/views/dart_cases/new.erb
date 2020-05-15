@@ -1,11 +1,16 @@
-<h2> This is your new page for cases </h2>
-
-<h1>Add a Dart Case</h1>
-
+<h2>Add a Dart Case</h2>
+<table>
 <form action="/dart_cases" method="POST">
   <label> Case Name </label>
   <input type="text" name="name" value="<%= @dart_case.name %>"> <br />
-
-  <input type="submit" value="Create">
+  <br />
+  <input style="width:75px;margin-right:25px;" type="submit" value="Create">
 </form>
+<form action="/dart_cases" method="GET">
+  <input style="width:75px;" type="submit" value="Cancel">
+</form>
+</table>
+
+<p style="text-align:center;">
 <a href="/dart_cases"> Your Dart Cases</a>
+</p>

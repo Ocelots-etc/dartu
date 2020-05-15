@@ -1,24 +1,40 @@
-<h2> This is your show page for cases </h2>
-
-  <h2><%= @dart_case.name %> Case</h2> <br />
+<h2><%= @dart_case.name %> Dart Case</h2>
 
 
-  <h2>Dart Sets</h2>
+  <h3>
+    <img  src="../images/dartset.jpg" height="35">
+    Dart Sets
+    <img  src="../images/dartset.jpg" height="35">
+  </h3>
   <% @dart_case.dart_sets.each do |dart_set| %>
-    <a href="/dart_sets/<%=dart_set.id%>"><%= dart_set.name %></a>
-    <a href="/dart_sets/<%=dart_set.id%>/edit">Edit <%= dart_set.name %></a>
+  <h4><%= dart_set.name %></h4>
+  <br />
+  <table>
+    <form action="/dart_sets/<%= dart_set.id %>" method="GET">
+      <input style="width:75px" type="submit" value="View">
+    </form>
+    <form action="/dart_sets/<%= dart_set.id %>/edit" method="GET">
+      <input style="width:75px;margin-left:25px;" type="submit" value="Edit">
+    </form>
     <form action="/dart_sets/<%= dart_set.id %>" method="POST">
       <input type="hidden" name="_method" value="DELETE" />
-      <input type="submit" value="delete">
+      <input style="width:75px;margin-left:25px;" type="submit" value="Delete">
     </form>
+  </table>
+
   <br />
   <br />
-  <% end%>
-  <a href="/dart_cases/<%=@dart_case.id%>/edit">Edit This Dart Case Name</a>
-  <br />
-  <a href="/dart_cases/<%=@dart_case.id%>/dart_sets/new">Add A New Dart Set</a>
-  <br />
-  <a href="/dart_cases"> Your Dart Cases</a>
-  
+  <% end %>
+
+  <p style="text-align:center;">
+    <a href="/dart_cases/<%=@dart_case.id%>/edit">Edit This Dart Case Name</a>
+    <br />
+   
+    <a href="/dart_cases/<%=@dart_case.id%>/dart_sets/new">Add A New Dart Set</a>
+   
+    <br />
+    <a href="/dart_cases"> Your Dart Cases</a>
+  </p>
+
   <br />
   <br />

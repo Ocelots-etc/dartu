@@ -22,7 +22,7 @@ case7 = DartCase.create(:name => "firstone", :user_id => user3.id)
 
 case8 = DartCase.create(:name => "oldy", :user_id => user4.id)
 
-set1 = DartSet.create(:name => "stuff", :dart_case_id => case1.id)
+set1 = DartSet.create(:name => "stuff", :manufacturer => "makas", :condition => "good", :body => "22g", :shaft => "Aluminum", :flight => "chipped", :dart_case_id => case1.id)
 
 set2 = DartSet.create(:name => "things", :dart_case_id => case2.id)
 

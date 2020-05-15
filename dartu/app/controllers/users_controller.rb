@@ -7,14 +7,10 @@ class UsersController < ApplicationController
 
   get '/users/:id' do
     if !logged_in?
-      redirect '/dart_cases'
+      redirect '/login'
     end
     @user = User.find(params[:id])
-    if !@user.nil? && @user == current_user
-      erb :'users/show'
-    else
-      redirect '/dart_cases'
-    end
+    redirect '/dart_cases'
   end
 
   post '/signup' do 
@@ -31,7 +27,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # Needs to wipe all session ids when a person presses login
   get '/login' do
     @error_message = session[:error]
     session.delete :error
@@ -48,7 +43,10 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect '/dart_cases'
     else
-      redirect '/login'
+      @error_message = "Invalid Login. Please Try Again"
+
+      erb :'users/login'
+     
     end
   end
 

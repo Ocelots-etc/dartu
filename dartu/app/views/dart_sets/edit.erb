@@ -1,32 +1,33 @@
-<h3 style="color:orange;"> Want to add a delete dart set button here that redirects to the case in which the dart set was deleted </h3>
-<h2> This is your edit page for dart sets </h2>
-
-<h1>Edit Your Dart Set <%= @dart_set.name %></h1>
+<h2>
+  <img  src="../../images/dartset.jpg" height="35">
+  Edit Your Dart Set <%= @dart_set.name %>
+  <img  src="../../images/dartset.jpg" height="35">
+  </h2>
 
 <form action="/dart_sets/<%= @dart_set.id %>" method="POST">
   <input type="hidden" name="_method" value="PUT" />
   <% @dart_set.errors.full_messages.each do |msg| %>
-    <h3><%= msg %></h3>
+    <p style="color:red;"><%= msg %></p>
   <% end %>
-  <label> Dart Set Name </label>
-  <input type="text" name="name" value="<%= @dart_set.name %>">
+  <label > Dart Set Name:</label>
+  <input style="position:absolute;left:450px;" type="text" name="name" value="<%= @dart_set.name %>">
   <br />
   <br />
-  <label> Dart Set Manufacturer: </label>
-  <input type="text" name="manufacturer" value="<%= @dart_set.manufacturer %>"> <br />
+  <label > Dart Set Manufacturer: </label>
+  <input style="position:absolute;left:450px;" type="text" name="manufacturer" value="<%= @dart_set.manufacturer %>"> <br />
   <br />
   <label> Dart Set Condition: </label>
-  <input type="text" name="condition" value="<%= @dart_set.condition %>"> <br />
-  <br />
-  <label> Dart Set Flight: </label>
-  <input type="text" name="flight" value="<%= @dart_set.flight %>"> <br />
+  <input style="position:absolute;left:450px;" type="text" name="condition" value="<%= @dart_set.condition %>"> <br />
   <br />
   <label> Dart Set Body: </label>
-  <input type="text" name="body" value="<%= @dart_set.body %>"> <br />
+  <input style="position:absolute;left:450px;" type="text" name="body" value="<%= @dart_set.body %>"> <br />
   <br />
   <label> Dart Set Shaft: </label>
-  <input type="text" name="shaft" value="<%= @dart_set.shaft %>"> <br /> 
-   <br /><br />
+  <input style="position:absolute;left:450px;" type="text" name="shaft" value="<%= @dart_set.shaft %>"> <br /> 
+  <br />  
+  <label> Dart Set Flight: </label>
+  <input style="position:absolute;left:450px;" type="text" name="flight" value="<%= @dart_set.flight %>"> <br />
+  <br /><br />
   <label> Case in which you find this set </label>
   <select name="dart_case_id">
     <% current_user.dart_cases.each do |dart_case| %>
@@ -34,6 +35,10 @@
     <% end %>
   </select>
   <br /><br />
-
-  <input type="submit" value="Update">
+<table>
+  <input style="width:75px" type="submit" value="Update">
 </form>
+<form action="/dart_sets/<%= @dart_set.id %>" method="GET">
+  <input style="width:75px;margin-left:25px;" type="submit" value="Cancel">
+</form>
+</table>

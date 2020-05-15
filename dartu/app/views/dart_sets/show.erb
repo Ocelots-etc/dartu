@@ -1,30 +1,37 @@
-<h3 style="color:orange;"> Want a link back to case in which this dart set can be located and somewhere on the page say which dart case this set is in. </h3>
-<h2> This is your show page for dart sets </h2>
 
-  <h2><%= @dart_set.name %> Dart Set<h2>
-  <br />
 
-  <h2>Darts</h2>
-  <% @dart_set %>
-    Dart Name: <%= @dart_set.name %></a>
+  <h2>
+    <img  src="../images/dartset.jpg" height="35">
+    <%= @dart_set.name %> Dart Set
+     <img  src="../images/dartset.jpg" height="35">
+  </h2>
+
+    Dart Name: <span style="position:absolute;left:425px;"><%= @dart_set.name %></span>
     <br />
-    Dart Manufacturer: <%= @dart_set.manufacturer %>
+    Dart Manufacturer: <span style="position:absolute;left:425px;"><%= @dart_set.manufacturer %></span>
     <br />
-    Dart Condition: <%= @dart_set.condition %>
+    Dart Condition: <span style="position:absolute;left:425px;"><%= @dart_set.condition %></span>
     <br />
-    Dart Flight: <%= @dart_set.flight %>
+    Dart Body: <span style="position:absolute;left:425px;"><%= @dart_set.body %></span>
     <br />
-    Dart Body: <%= @dart_set.body %>
+    Dart Shaft: <span style="position:absolute;left:425px;"><%= @dart_set.shaft %></span>
     <br />
-    Dart Shaft: <%= @dart_set.shaft %>
+    Dart Flight: <span style="position:absolute;left:425px;"><%= @dart_set.flight %></span>
     <br />
+    <br />
+    <table>
+    <form action="/dart_sets/<%= @dart_set.id %>/edit" method="GET">
+      <input style="width:75px" type="submit" value="Edit">
+    </form>    
     <form action="/dart_sets/<%= @dart_set.id %>" method="POST">
       <input type="hidden" name="_method" value="DELETE" />
-      <input type="submit" value="Delete Dart Set">
+      <input style="width:75px;margin-left:25px;" type="submit" value="Delete">
     </form>
+    </table>
   <br />
   <br />
-  <a href="/dart_sets/<%= @dart_set.id %>/edit">Edit</a>
+  <p style="text-align:center;">
   <a href="/dart_cases/<%= @dart_set.dart_case_id %>">Back to your case</a>
+  </p>
   <br />
   <br />

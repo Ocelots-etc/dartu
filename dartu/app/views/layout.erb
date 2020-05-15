@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<html class="no-js" lang="en">
   <head>
+  <link rel="shortcut icon" href="favicon.ico" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
@@ -13,11 +12,21 @@
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
-  <body>
-    <div class="wrapper">
-      <% if current_user %>
-        <a href="/logout"> Logout</a>
-      <% end %>
+  <body style="background:black;">
+    <div style="background:gray;" class="wrapper">
+    <img style="text-align:left;" src="/images/dartboard.jpg" height="50">
+     
+  <% if current_user %>
+    <span style="float:right;">Hi, <%= current_user.username %>!
+    <a href="/logout" style="float:right;margin-left:15px"> Logout</a>
+    </span>
+  <% else %>
+    <a href="/users/new" style="float:right;margin-left:15px"> Sign Up</a>
+  <% end %>
+  
+  <br />
+  <h3>Dartu</h3>
+      
       <%= yield %>
       <footer class="branding">
         <small>&copy; 2020 <strong>Dartu</strong></small>
@@ -25,9 +34,6 @@
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <!--[if lt IE 7]>
-      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-    <![endif]-->
+
   </body>
 </html>
